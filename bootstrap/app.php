@@ -1,35 +1,21 @@
 <?php
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
+use DI\Container;
+use Slim\Views\Twig;
+use Slim\Views\TwigExtension;
 
-session_start();
 require __DIR__ . '/../vendor/autoload.php';
 
-$app = AppFactory::create();
+$container = new Container();
 
-$app->get('/', function (Request $request, Response $response, $args){
-  $response->getBody()->write("Hello World!");
-  return $response;
+$container->set('view', function($container) {
+  $view = Twig::create(__DIR__ . '/../resources/views', ['cache' => false]);
+  return $view;
 });
 
-require __DIR__ . '/../app/routes.php';
+AppFactory::setContainer($container);
+$app = AppFactory::create();
 
-$user = new \App\Models\User('Bartosz');
-echo 'Imie: '.$user->getName().'<br>';
-var_dump($user);
-die();
+$app->addErrorMiddleware(true, true, true);
 
-$container = $app->getContainer();
-$container['view'] = function ($container){
-  $view = new \Slim\Views\Twig(__DIR__.'/../views',[
-  'cache' => false
-]);
-
-$view->addExtension(new \Slim\Views\TwigExtension(
-    $container->router,
-    $container->request->getUri()
-  ));
-  return $view;
-};
- ?>
+require __DIR__.'/../app/routes.php';
