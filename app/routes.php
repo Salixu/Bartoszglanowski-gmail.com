@@ -10,4 +10,8 @@ $app->get('/home', function($request, $response){
   return $this->get('view')->render($response, 'index.twig');
 });
 
+$app->get('/konsultacje', function($request, $response){
+  return $this->get('view')->render($response, 'konsultacje.twig');
+});
+
 ?>
