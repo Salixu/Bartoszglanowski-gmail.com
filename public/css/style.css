@@ -1,39 +1,109 @@
 body {
-    background-color: rgb(18, 114, 74);
-    font-size: 12pt;
-    color: white;
+  background-color: #8AB34D;
+  color: black;
 }
 
-.content{
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+.content {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.nav-wrapper{
-    background-color:rgb(18, 48, 32)!important;
+.nav-wrapper {
+  background-color: #CFFF87;
 }
 
-.home-content{
-    background-color: rgb(18, 48, 32);
-    margin-top: 15%;
-    text-align: justify;
+.nav-ele, .brand-logo {
+  color: black !important;
 }
 
-.home-header{
-    text-align: center;
+.home-content {
+  background-color: #CFFF87;
+  text-align: justify;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  -webkit-transform: translate(-50%, -50%) !important;
+          transform: translate(-50%, -50%) !important;
+  width: 35em;
+  border-radius: 10px;
 }
 
-.home-paragraph{
-    margin-bottom: 2em;
-    padding-left: 1em;
-    padding-right: 1em;
+.home-header {
+  text-align: center;
 }
 
-.consultations-container{
-    background-color:rgb(18, 48, 32);
-    margin-top: 2em;
-    text-align: center;
+.home-paragraph {
+  margin-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
-.consultations-header{
-    font-size: 3em;
+.consultations-container {
+  background-color: #CFFF87;
+  margin-top: 2em;
+  text-align: center;
 }
+
+.consultations-header {
+  font-size: 3em;
+}
+
+.datepicker {
+  text-align: center;
+  border-bottom: 1px solid #8AB34D !important;
+}
+
+.datepicker:hover {
+  cursor: pointer;
+}
+
+.datepicker-table {
+  color: black;
+}
+
+.datepicker-date-display {
+  background-color: #8AB34D;
+}
+
+.datepicker-cancel, .is-today, .datepicker-clear, .datepicker-today, .datepicker-done {
+  color: #8AB34D !important;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #8AB34D !important;
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #CFFF87;
+  color: black;
+  text-align: center;
+}
+
+a {
+  color: #8AB34D;
+}
+
+.footer-link {
+  font-weight: 700;
+}
+
+::-webkit-input-placeholder {
+  color: #8AB34D;
+}
+
+:-ms-input-placeholder {
+  color: #8AB34D;
+}
+
+::-ms-input-placeholder {
+  color: #8AB34D;
+}
+
+::placeholder {
+  color: #8AB34D;
+}
+/*# sourceMappingURL=style.css.map */

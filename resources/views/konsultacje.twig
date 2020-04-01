@@ -8,15 +8,18 @@
             </div>
         </div>
         <div class='row'>
-            <div class='col s8 offset-s2'>
-                <input type="text"class="datepicker">
+            <div class='col s3 offset-s3'>
+                <p>Wybierz datę konsultacji</p>
+            </div>
+            <div class='col s3'>
+                <input placeholder='Wybierz datę' type="text"class="datepicker" style='color: black'>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-      $(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
+    $(document).ready(function(){
+        $('.datepicker').datepicker();
+    });
     </script>
 {% endblock %}

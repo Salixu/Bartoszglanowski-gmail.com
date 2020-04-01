@@ -21,14 +21,18 @@
             <div class="nav-wrapper">
             <a href="/home" style='margin-left:1em' class="brand-logo">KonsultacjeAPP</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/konsultacje">Umów konsultacje</a></li>
-                <li><a href="#">Zarządzaj konsultacjami</a></li>
+                <li><a href="/konsultacje" class='nav-ele'>Umów konsultacje</a></li>
+                <li><a href="#" class='nav-ele'>Zarządzaj konsultacjami</a></li>
             </ul>
             </div>
         </nav>
         <div id='content'>
             {% block content %}
             {% endblock %}
+        </div>
+        <div id='footer'>
+            <p>Autorzy: Kasprzak Dominik, Bartosz Glanowski</p>
+            <p>Github projektu: <a class='footer-link' href='https://github.com/Salixu/Slim-app-project'>tutaj</a></p>
         </div>
     </div>
 
