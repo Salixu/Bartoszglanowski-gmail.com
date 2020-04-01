@@ -1,4 +1,5 @@
 $darker-green: #8AB34D
+$darker-green-hover: #93bd53
 $lighter-green: #CFFF87
 
 $color2: #D9FFA1
@@ -44,6 +45,9 @@ body
 .consultations-header
     font-size: 3em
 
+.consultations-form
+    padding-bottom: 2em
+
 //Date input style
 .datepicker
     text-align: center
@@ -65,12 +69,49 @@ body
 
 // Select font color
 .dropdown-content li>a, .dropdown-content li>span
-    color: black !important
+    color: black
     &:hover
         background-color: $color2
 
+// Selected day background color
 .datepicker-table td.is-selected
     background-color: $darker-green
+
+// Select input style
+.select-wrapper input.select-dropdown
+    text-align: center;
+    border-bottom: 1px solid $darker-green
+    color: black
+    &:focus
+        border-bottom: 1px solid $darker-green !important
+
+// Disable select option style
+.disabled>span, .selected
+    color: rgba(0,0,0,0.3) !important
+    background-color: #999
+    &:hover
+        background-color: transparent;
+        cursor: default
+
+// Input lebel style
+label
+    color: black !important
+
+// Colors of inputs
+#last_name, #first_name, #email, #textarea
+    border-bottom: 1px solid $darker-green
+    &:focus
+        border-bottom: 1px solid $darker-green !important
+        box-shadow: none !important
+
+// Disable box-shadow after correct email
+input[type=email]:not(.browser-default)
+    box-shadow: none !important
+
+.btn
+    background-color: $darker-green
+    &:hover
+        background-color: $darker-green-hover;
 
 #footer
     position: fixed
@@ -88,5 +129,5 @@ a
     font-weight: 700
 
 ::placeholder
-    color: $darker-green
+    color: black
     

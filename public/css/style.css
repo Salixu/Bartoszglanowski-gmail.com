@@ -48,6 +48,10 @@ body {
   font-size: 3em;
 }
 
+.consultations-form {
+  padding-bottom: 2em;
+}
+
 .datepicker {
   text-align: center;
   border-bottom: 1px solid #8AB34D !important;
@@ -70,7 +74,7 @@ body {
 }
 
 .dropdown-content li > a, .dropdown-content li > span {
-  color: black !important;
+  color: black;
 }
 
 .dropdown-content li > a:hover, .dropdown-content li > span:hover {
@@ -79,6 +83,53 @@ body {
 
 .datepicker-table td.is-selected {
   background-color: #8AB34D;
+}
+
+.select-wrapper input.select-dropdown {
+  text-align: center;
+  border-bottom: 1px solid #8AB34D;
+  color: black;
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid #8AB34D !important;
+}
+
+.disabled > span, .selected {
+  color: rgba(0, 0, 0, 0.3) !important;
+  background-color: #999;
+}
+
+.disabled > span:hover, .selected:hover {
+  background-color: transparent;
+  cursor: default;
+}
+
+label {
+  color: black !important;
+}
+
+#last_name, #first_name, #email, #textarea {
+  border-bottom: 1px solid #8AB34D;
+}
+
+#last_name:focus, #first_name:focus, #email:focus, #textarea:focus {
+  border-bottom: 1px solid #8AB34D !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+input[type=email]:not(.browser-default) {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.btn {
+  background-color: #8AB34D;
+}
+
+.btn:hover {
+  background-color: #93bd53;
 }
 
 #footer {
@@ -100,18 +151,18 @@ a {
 }
 
 ::-webkit-input-placeholder {
-  color: #8AB34D;
+  color: black;
 }
 
 :-ms-input-placeholder {
-  color: #8AB34D;
+  color: black;
 }
 
 ::-ms-input-placeholder {
-  color: #8AB34D;
+  color: black;
 }
 
 ::placeholder {
-  color: #8AB34D;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
