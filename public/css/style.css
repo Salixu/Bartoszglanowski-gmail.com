@@ -25,7 +25,6 @@ body {
   -webkit-transform: translate(-50%, -50%) !important;
           transform: translate(-50%, -50%) !important;
   width: 35em;
-  border-radius: 10px;
 }
 
 .home-header {
@@ -38,17 +37,17 @@ body {
   padding-right: 1em;
 }
 
-.consultations-container {
+.consultations-container, .login-container {
   background-color: #CFFF87;
   margin-top: 2em;
   text-align: center;
 }
 
-.consultations-header {
+.consultations-header, .login-header {
   font-size: 3em;
 }
 
-.consultations-form {
+.consultations-form, .login-form {
   padding-bottom: 2em;
 }
 
@@ -109,11 +108,11 @@ label {
   color: black !important;
 }
 
-#last_name, #first_name, #email, #textarea {
+#last_name, #first_name, #email, #textarea, #login, #password {
   border-bottom: 1px solid #8AB34D;
 }
 
-#last_name:focus, #first_name:focus, #email:focus, #textarea:focus {
+#last_name:focus, #first_name:focus, #email:focus, #textarea:focus, #login:focus, #password:focus {
   border-bottom: 1px solid #8AB34D !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;

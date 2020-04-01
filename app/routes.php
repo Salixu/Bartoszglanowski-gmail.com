@@ -14,4 +14,8 @@ $app->get('/konsultacje', function($request, $response){
   return $this->get('view')->render($response, 'konsultacje.twig');
 });
 
+$app->get('/login', function($request, $response){
+  return $this->get('view')->render($response, 'login.twig');
+});
+
 ?>

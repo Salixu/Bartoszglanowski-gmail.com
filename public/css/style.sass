@@ -9,7 +9,7 @@ $color5: #E787FF
 body 
     background-color: $darker-green
     color: black
-
+    
 .content
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2)
 
@@ -27,7 +27,6 @@ body
     left: 50% !important
     transform: translate(-50%, -50%) !important
     width: 35em
-    border-radius: 10px
 
 .home-header
     text-align: center
@@ -37,15 +36,15 @@ body
     padding-left: 1em
     padding-right: 1em
 
-.consultations-container
+.consultations-container, .login-container
     background-color: $lighter-green
     margin-top: 2em
     text-align: center
 
-.consultations-header
+.consultations-header, .login-header
     font-size: 3em
 
-.consultations-form
+.consultations-form, .login-form
     padding-bottom: 2em
 
 //Date input style
@@ -98,7 +97,7 @@ label
     color: black !important
 
 // Colors of inputs
-#last_name, #first_name, #email, #textarea
+#last_name, #first_name, #email, #textarea, #login, #password
     border-bottom: 1px solid $darker-green
     &:focus
         border-bottom: 1px solid $darker-green !important
