@@ -70,7 +70,15 @@ body {
 }
 
 .dropdown-content li > a, .dropdown-content li > span {
-  color: #8AB34D !important;
+  color: black !important;
+}
+
+.dropdown-content li > a:hover, .dropdown-content li > span:hover {
+  background-color: #D9FFA1;
+}
+
+.datepicker-table td.is-selected {
+  background-color: #8AB34D;
 }
 
 #footer {

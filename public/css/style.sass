@@ -63,9 +63,14 @@ body
 .datepicker-cancel, .is-today, .datepicker-clear, .datepicker-today, .datepicker-done
     color: $darker-green !important
 
-// Calendar years and months picker font color
+// Select font color
 .dropdown-content li>a, .dropdown-content li>span
-    color: $darker-green !important
+    color: black !important
+    &:hover
+        background-color: $color2
+
+.datepicker-table td.is-selected
+    background-color: $darker-green
 
 #footer
     position: fixed
