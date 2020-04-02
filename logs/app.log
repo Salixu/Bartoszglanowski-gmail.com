@@ -1,0 +1,9 @@
+[2020-04-02T16:56:56.926739+02:00] slim-app.DEBUG: example {"context":"message"} {"uid":"d3e5612"}
+[2020-04-02T16:57:37.488687+02:00] slim-app.DEBUG: example {"context":"message"} {"uid":"7384ed2"}
+[2020-04-02T16:58:36.545098+02:00] slim-app.DEBUG: example {"context":"message"} {"uid":"7f225fb"}
+[2020-04-02T16:58:42.750885+02:00] slim-app.DEBUG: example {"context":"message"} {"uid":"716ac40"}
+[2020-04-02T16:58:49.228528+02:00] slim-app.DEBUG: example {"context":"message"} {"uid":"b2087b4"}
+[2020-04-02T17:01:28.447955+02:00] slim-app.DEBUG: example {"context":"message"} {"uid":"ce20f17"}
+[2020-04-02T17:01:29.244864+02:00] slim-app.DEBUG: example {"context":"message"} {"uid":"f7d633b"}
+[2020-04-02T17:01:30.213850+02:00] slim-app.DEBUG: example {"context":"message"} {"uid":"165bdc9"}
+[2020-04-02T17:01:32.027406+02:00] slim-app.DEBUG: example {"context":"message"} {"uid":"87512a2"}

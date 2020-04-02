@@ -1,21 +1,36 @@
 <?php
-use Slim\Factory\AppFactory;
-use DI\Container;
 
-$app->get('/', function($request, $response){
-  return $this->get('view')->render($response, 'index.twig');
-});
+declare(strict_types=1);
 
-$app->get('/home', function($request, $response){
-  return $this->get('view')->render($response, 'index.twig');
-});
+use Slim\App;
+use \Slim\Routing\RouteCollectorProxy;
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
 
-$app->get('/konsultacje', function($request, $response){
-  return $this->get('view')->render($response, 'konsultacje.twig');
-});
+return function (App $app){
+  $container = $app->getContainer();
 
-$app->get('/login', function($request, $response){
-  return $this->get('view')->render($response, 'login.twig');
-});
+  $app->group('', function(RouteCollectorProxy $view){
 
-?>
+    $view->get('/', function ($request, $response){
+      $view = 'index.twig';
+      return $this->get('view')->render($response, $view);
+    });
+
+    $view->get('/home', function ($request, $response){
+      $view = 'index.twig';
+      return $this->get('view')->render($response, $view);
+    });
+
+    $view->get('/konsultacje', function ($request, $response){
+      $view = 'consultations.twig';
+      return $this->get('view')->render($response, $view);
+    });
+
+    $view->get('/login', function ($request, $response){
+      $view = 'login.twig';
+      return $this->get('view')->render($response, $view);
+    });
+
+  })->add($container->get('viewMiddleware'));
+};
