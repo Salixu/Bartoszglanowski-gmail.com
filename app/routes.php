@@ -1,42 +1,17 @@
 <?php
 
-declare(strict_types=1);
-
 use Slim\App;
-use \Slim\Routing\RouteCollectorProxy;
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
-use App\Http\Controllers\TestingClass;
+use App\Http\Controllers\WelcomeController;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
-return function (App $app){
-  // $container = $app->getContainer();
+return function (App $app) {
+    $app->get('/home', function(Request $request, Response $response, $args) {
+        $name = 'Clean Code Studio';
 
-  // $app->group('', function(RouteCollectorProxy $view){
+        return view($response, 'auth.home', compact('name'));
+    });
 
-  //   $view->get('/', function ($request, $response){
-  //     $view = 'index.twig';
-  //     return $this->get('view')->render($response, $view);
-  //   });
-
-  //   $view->get('/home', function ($request, $response){
-  //     $view = 'index.twig';
-  //     return $this->get('view')->render($response, $view);
-  //   });
-
-  //   $view->get('/konsultacje', function ($request, $response){
-  //     $view = 'consultations.twig';
-  //     return $this->get('view')->render($response, $view);
-  //   });
-
-  //   $view->get('/login', function ($request, $response){
-  //     $view = 'login.twig';
-  //     return $this->get('view')->render($response, $view);
-  //   });
-     $app->get('/testing', [TestingClass::class, 'testing']);
-    
-     $app->get('/login', [TestingClass::class, 'loginView']);
-
-   
-
-  // })->add($container->get('viewMiddleware'));
+    $app->get('/', [WelcomeController::class, 'index']);
+    $app->get('/{name}', [WelcomeController::class, 'show']);
 };

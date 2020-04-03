@@ -4,50 +4,58 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9
+class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
 {
     public static $files = array (
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
-        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
+        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
+        '32b0e3923194ab469a640d51c243b626' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'T' => 
+        'v' => 
         array (
-            'Twig\\' => 5,
+            'voku\\tests\\' => 11,
+            'voku\\' => 5,
         ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
             'Symfony\\Polyfill\\Php56\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Contracts\\Translation\\' => 30,
+            'Symfony\\Component\\Translation\\' => 30,
+            'Symfony\\Component\\Finder\\' => 25,
             'SuperClosure\\' => 13,
-            'Slim\\Views\\' => 11,
             'Slim\\Psr7\\' => 10,
-            'Slim\\Http\\' => 10,
             'Slim\\' => 5,
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 8,
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Http\\Server\\' => 16,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
             'PhpDocReader\\' => 13,
         ),
-        'M' => 
+        'J' => 
         array (
-            'Monolog\\' => 8,
+            'Jenssegers\\Blade\\' => 17,
         ),
         'I' => 
         array (
             'Invoker\\' => 8,
+            'Illuminate\\View\\' => 16,
+            'Illuminate\\Support\\' => 19,
+            'Illuminate\\Filesystem\\' => 22,
+            'Illuminate\\Events\\' => 18,
+            'Illuminate\\Contracts\\' => 21,
+            'Illuminate\\Container\\' => 21,
         ),
         'F' => 
         array (
@@ -56,8 +64,13 @@ class ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9
         ),
         'D' => 
         array (
+            'Doctrine\\Common\\Inflector\\' => 26,
             'DI\\Bridge\\Slim\\' => 15,
             'DI\\' => 3,
+        ),
+        'C' => 
+        array (
+            'Carbon\\' => 7,
         ),
         'A' => 
         array (
@@ -66,9 +79,13 @@ class ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9
     );
 
     public static $prefixDirsPsr4 = array (
-        'Twig\\' => 
+        'voku\\tests\\' => 
         array (
-            0 => __DIR__ . '/..' . '/twig/twig/src',
+            0 => __DIR__ . '/..' . '/voku/portable-ascii/tests',
+        ),
+        'voku\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -82,34 +99,33 @@ class ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Polyfill\\Ctype\\' => 
+        'Symfony\\Contracts\\Translation\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
+        ),
+        'Symfony\\Component\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
         ),
         'SuperClosure\\' => 
         array (
             0 => __DIR__ . '/..' . '/jeremeamia/superclosure/src',
         ),
-        'Slim\\Views\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/slim/twig-view/src',
-            1 => __DIR__ . '/..' . '/slim/views',
-        ),
         'Slim\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/psr7/src',
-        ),
-        'Slim\\Http\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/slim/http/src',
         ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
         ),
-        'Psr\\Log\\' => 
+        'Psr\\SimpleCache\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
         'Psr\\Http\\Server\\' => 
         array (
@@ -133,13 +149,37 @@ class ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9
         array (
             0 => __DIR__ . '/..' . '/php-di/phpdoc-reader/src/PhpDocReader',
         ),
-        'Monolog\\' => 
+        'Jenssegers\\Blade\\' => 
         array (
-            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+            0 => __DIR__ . '/..' . '/jenssegers/blade/src',
         ),
         'Invoker\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/invoker/src',
+        ),
+        'Illuminate\\View\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/view',
+        ),
+        'Illuminate\\Support\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/support',
+        ),
+        'Illuminate\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/filesystem',
+        ),
+        'Illuminate\\Events\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/events',
+        ),
+        'Illuminate\\Contracts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/contracts',
+        ),
+        'Illuminate\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/container',
         ),
         'Fig\\Http\\Message\\' => 
         array (
@@ -149,6 +189,10 @@ class ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
         'DI\\Bridge\\Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/slim-bridge/src',
@@ -156,6 +200,10 @@ class ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9
         'DI\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/php-di/src',
+        ),
+        'Carbon\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
         'App\\' => 
         array (
@@ -166,8 +214,8 @@ class ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit037cab7fe56a327fcd8b102f9927baa9::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7a420f714c008118ba2f31e9db4378f8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7a420f714c008118ba2f31e9db4378f8::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
