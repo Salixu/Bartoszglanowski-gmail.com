@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 use DI\Container;
-use Slim\Factory\AppFactory;
+use DI\Bridge\Slim\Bridge as SlimAppFactory;
+// use Slim\Factory\AppFactory;
 
 require __DIR__.'/../vendor/autoload.php';
 
@@ -15,11 +16,14 @@ $settings($container);
 $logger = require __DIR__.'/../app/logger.php';
 $logger($container);
 
+
+$app = SlimAppFactory::create($container);
+
 // Set Container on app
-AppFactory::setContainer($container);
+// AppFactory::setContainer($container);
 
 // Create App
-$app = AppFactory::create();
+// $app = AppFactory::create();
 
 $views = require __DIR__.'/../app/views.php';
 $views($app);
