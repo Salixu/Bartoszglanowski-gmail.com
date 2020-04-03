@@ -6,12 +6,17 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 return function (App $app) {
-    $app->get('/home', function(Request $request, Response $response, $args) {
-        $name = 'Clean Code Studio';
+    $app->get('/home', function(Request $request, Response $response) {
+        return view($response, 'home');
+    });
 
-        return view($response, 'auth.home', compact('name'));
+    $app->get('/konsultacje', function(Request $request, Response $response) {
+        return view($response, 'consultations');
+    });
+
+    $app->get('/login', function(Request $request, Response $response) {
+        return view($response, 'login');
     });
 
     $app->get('/', [WelcomeController::class, 'index']);
-    $app->get('/{name}', [WelcomeController::class, 'show']);
 };
