@@ -20,7 +20,7 @@
         <div class="nav-wrapper">
             <a href="/home" style='margin-left:1em' class="brand-logo">KonsultacjeAPP</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/konsultacje" class='nav-ele'>Umów konsultacje</a></li>
+                <li><a href="/consultations" class='nav-ele'>Umów konsultacje</a></li>
                 <li><a href="#" class='nav-ele'>Zarządzaj konsultacjami</a></li>
             </ul>
         </div>

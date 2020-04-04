@@ -8,6 +8,7 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
@@ -25,11 +26,14 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
         'S' => 
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
+            'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Php56\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Contracts\\Translation\\' => 30,
+            'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Finder\\' => 25,
+            'Symfony\\Component\\Console\\' => 26,
             'SuperClosure\\' => 13,
             'Slim\\Psr7\\' => 10,
             'Slim\\' => 5,
@@ -54,6 +58,7 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
             'Illuminate\\Support\\' => 19,
             'Illuminate\\Filesystem\\' => 22,
             'Illuminate\\Events\\' => 18,
+            'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
@@ -91,6 +96,10 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-util',
         ),
+        'Symfony\\Polyfill\\Php73\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
+        ),
         'Symfony\\Polyfill\\Php56\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php56',
@@ -103,6 +112,10 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
         array (
             0 => __DIR__ . '/..' . '/symfony/translation-contracts',
         ),
+        'Symfony\\Contracts\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
         'Symfony\\Component\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
@@ -110,6 +123,10 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
+        'Symfony\\Component\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/console',
         ),
         'SuperClosure\\' => 
         array (
@@ -173,6 +190,10 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
         array (
             0 => __DIR__ . '/..' . '/illuminate/events',
         ),
+        'Illuminate\\Database\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/database',
+        ),
         'Illuminate\\Contracts\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/contracts',
@@ -211,11 +232,16 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
         ),
     );
 
+    public static $classMap = array (
+        'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit7a420f714c008118ba2f31e9db4378f8::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit7a420f714c008118ba2f31e9db4378f8::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7a420f714c008118ba2f31e9db4378f8::$classMap;
 
         }, null, ClassLoader::class);
     }

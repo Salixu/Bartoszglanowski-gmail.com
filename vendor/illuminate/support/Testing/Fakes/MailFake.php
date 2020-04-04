@@ -2,14 +2,13 @@
 
 namespace Illuminate\Support\Testing\Fakes;
 
-use Illuminate\Contracts\Mail\Factory;
 use Illuminate\Contracts\Mail\Mailable;
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use PHPUnit\Framework\Assert as PHPUnit;
 
-class MailFake implements Factory, Mailer, MailQueue
+class MailFake implements Mailer, MailQueue
 {
     /**
      * The mailer currently being used to send a message.
