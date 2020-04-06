@@ -13,5 +13,6 @@ return array(
     '253c157292f75eb38082b5acb06f3f01' => $vendorDir . '/nikic/fast-route/src/functions.php',
     'bd9634f2d41831496de0d3dfe4c94881' => $vendorDir . '/symfony/polyfill-php56/bootstrap.php',
     'b33e3d135e5d9e47d845c576147bda89' => $vendorDir . '/php-di/php-di/src/functions.php',
+    '320cde22f66dd4f5d3fd621d3e88b98f' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
     '32b0e3923194ab469a640d51c243b626' => $baseDir . '/app/helpers.php',
 );

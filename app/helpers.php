@@ -7,6 +7,18 @@ use Illuminate\Support\Str;
 
 /* Global Helper Functions */
 
+
+if (!function_exists( 'env')){
+
+    function env($key, $default = false){
+        $value = getenv($key);
+
+        throw_when( !$value and !$default, "{$key} is not a definded .env variable and has not default value.");
+        
+        return $value or $default;
+    }
+}
+
 if (!function_exists('base_path'))
 {
     function base_path($path = '')
