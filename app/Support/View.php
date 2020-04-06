@@ -1,12 +1,10 @@
 <?php
 
-
 namespace App\Support;
 
 use Jenssegers\Blade\Blade;
-use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ResponseFactoryInterface;
 
 class View
 {
@@ -17,7 +15,7 @@ class View
         $this->response = $factory->createResponse(200, 'Success');
     }
 
-    public function __invoke(string $template ='', array $with = []) : ResponseInterface
+    public function __invoke(string $template = '', array $with = []) : ResponseInterface
     {
         $cache = config('blade.cache');
         $views = config('blade.views');

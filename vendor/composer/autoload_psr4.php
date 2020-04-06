@@ -48,5 +48,6 @@ return array(
     'DI\\Bridge\\Slim\\' => array($vendorDir . '/php-di/slim-bridge/src'),
     'DI\\' => array($vendorDir . '/php-di/php-di/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
+    'Boot\\' => array($baseDir . '/bootstrap'),
     'App\\' => array($baseDir . '/app'),
 );

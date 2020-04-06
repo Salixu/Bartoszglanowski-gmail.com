@@ -2,14 +2,13 @@
 
 namespace App\Support;
 
-use Slim\App;
 use Illuminate\Support\Str;
 
 class Route
 {
-    protected static $app;
+    public static $app;
 
-    public static function setup(App &$app)
+    public static function setup(&$app)
     {
         self::$app = $app;
 
@@ -19,6 +18,7 @@ class Route
     public static function __callStatic($verb, $parameters)
     {
         $app = self::$app;
+
         [$route, $action] = $parameters;
 
         self::validation($route, $verb, $action);
@@ -32,6 +32,7 @@ class Route
     {
         $class = Str::before($action, '@');
         $method = Str::after($action, '@');
+
         $controller = config('routing.controllers.namespace') . $class;
 
         return [$controller, $method];
@@ -39,9 +40,9 @@ class Route
 
     protected static function validation($route, $verb, $action)
     {
-        $exception = "Unresolvable Callback/Controller route action. \n";
+        $exception = "Unresolvable Route Callback/Controller action";
         $context = json_encode(compact('route', 'action', 'verb'));
-        $fails = !((is_callable($action)) or (is_string($action) and Str::is('*@*', $action)));
+        $fails = !((is_callable($action)) or (is_string($action) and Str::is("*@*", $action)));
 
         throw_when($fails, $exception . $context);
     }

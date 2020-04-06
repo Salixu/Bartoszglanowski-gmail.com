@@ -91,6 +91,10 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
         array (
             'Carbon\\' => 7,
         ),
+        'B' => 
+        array (
+            'Boot\\' => 5,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -267,6 +271,10 @@ class ComposerStaticInit7a420f714c008118ba2f31e9db4378f8
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Boot\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/bootstrap',
         ),
         'App\\' => 
         array (
