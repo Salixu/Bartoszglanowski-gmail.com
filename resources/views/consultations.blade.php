@@ -7,7 +7,7 @@
                 <h1 class='consultations-header'>Umów konsultacje</h1>
             </div>
         </div>
-        <form class='consultations-form'>
+        <form action='{{\App\Http\Controllers\ConsultationsController::class->getConsultationsData}}'class='consultations-form'>
             <div class='row'>
                 <div class='col s3 offset-s3'>
                     <div class="input-field">

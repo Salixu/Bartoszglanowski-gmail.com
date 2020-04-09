@@ -10,4 +10,9 @@ class ConsultationsController
     {
         return $view('consultations');
     }
+
+    public function getConsultationsData()
+    {
+
+    }
 }
