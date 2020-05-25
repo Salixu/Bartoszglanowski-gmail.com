@@ -10,15 +10,10 @@ class HomeController extends Controller
 
     public function index($request, $response){
 
-//         EXAMPLE OF USER CREATE
-//        $user = User::create([
-//            'username' => 'janek',
-//            'email' => 'awfaw',
-//            'first_name' => 'afsdfs',
-//            'last_name' => 'awfafwa'
-//        ]);
-//        die();
+        $data = [
+            'admin' => $_SESSION['admin']
+        ];
 
-        return $this->view->render($response, 'home.twig');
+        return $this->view->render($response, 'home.twig', $data);
     }
 }

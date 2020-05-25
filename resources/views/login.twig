@@ -7,26 +7,26 @@
             <h1 class='login-header'>Zaloguj się</h1>
         </div>
     </div>
-    <form method="post" class='login-form'>
+    <form action="{{ path_for('loginPage') }}" method="post" class='login-form'>
         <div class='row'>
             <div class='col s4 offset-s4'>
                 <div class="input-field">
-                    <input class="input-field" id="login" type="text" class="validate">
-                    <label for="login">{{ first }}</label>
+                    <label for="login">Login</label>
+                    <input class="input-field validate" id="login" name="login" type="text">
                 </div>
             </div>
         </div>
         <div class='row'>
             <div class='col s4 offset-s4'>
                 <div class="input-field">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">{{ second }}</label>
+                    <label for="password">Hasło</label>
+                    <input class="validate input-field" id="password" name="password" type="password">
                 </div>
             </div>
         </div>
         <div class='row'>
             <div class='col s4 offset-s4'>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Zaloguj
+                <button class="btn waves-effect waves-light" type="submit">Zaloguj
                 </button>
             </div>
         </div>

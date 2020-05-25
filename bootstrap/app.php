@@ -64,6 +64,10 @@ $container['LoginController'] = function($container){
     return new \App\Controllers\LoginController($container);
 };
 
+$container['auth'] = function($container){
+    return new \App\Auth\Auth;
+};
+
 // Register middleware
 require __DIR__ . '/../app/middleware.php';
 

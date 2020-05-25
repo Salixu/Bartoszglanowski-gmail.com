@@ -12,7 +12,7 @@ final class ConsultationsController extends Controller
     public function getConsultations($request, $response)
     {
         $data = [
-            'subjects' => ['Pierwszy', 'Drugi', 'Trzeci']
+            'admin' => $_SESSION['admin']
         ];
 
         $this->view->render($response, 'consultations.twig', $data);
