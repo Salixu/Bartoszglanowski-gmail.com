@@ -49,6 +49,11 @@ body {
 
 .consultations-form, .login-form {
     padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.consultations-date-picker{
+    padding-top: 6em;
 }
 
 .datepicker {
@@ -164,4 +169,5 @@ a {
 ::placeholder {
     color: black;
 }
+
 /*# sourceMappingURL=style.css.map */

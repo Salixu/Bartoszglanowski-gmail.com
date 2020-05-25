@@ -1,0 +1,52 @@
+{% extends "templates/consultations-template.twig" %}
+
+{% block form %}
+
+    <script>
+        $(document).ready(function(){
+            $('.datepicker').datepicker(
+                {
+                    disableDayFn: function(date){
+
+                        let listDate = [
+                            {% for date in dateList %}
+                            new Date('{{ date }}').toDateString(),
+                            {% endfor %}
+                        ];
+
+                        if(listDate.includes(date.toDateString())){
+                            return false;
+                        }else{
+                            return true;
+                        }
+                    },
+
+                    format: 'yyyy/mm/dd'
+                }
+            );
+
+            {#{% for date in dateList %}#}
+            {#console.log({{ date }});#}
+            {#{% endfor %}#}
+
+            {#$('select').formSelect();#}
+            {#M.updateTextFields();#}
+        });
+    </script>
+
+    <form action="{{ path_for('consultationsPage') }}" method="post" class='consultations-form consultations-date-picker'>
+        <div class='row'>
+            <div class='col s2 offset-s5' style="margin-bottom: 6em">
+                <input placeholder='Wybierz datę' name="date" type="text"class="datepicker">
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col s2 offset-s5'>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Dalej
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

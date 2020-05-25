@@ -3,7 +3,9 @@
 $app->get('/', 'HomeController:index')->setName('homePage');
 $app->get('/home', 'HomeController:index');
 
-$app->get('/consultations', 'ConsultationsController:getConsultations');
+$app->get('/consultations', 'ConsultationsController:datePickerConsultations')->setName('consultationsPage');
+$app->post('/consultations', 'ConsultationsController:postDatePickerConsultations');
+$app->get('/consultations/{date}', 'ConsultationsController:timePickerConsultations');
 
 $app->get('/login', 'LoginController:getLogin')->setName('loginPage');
 $app->post('/login', 'LoginController:login');
