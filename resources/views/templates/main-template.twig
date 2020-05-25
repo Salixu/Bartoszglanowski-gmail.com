@@ -22,7 +22,6 @@
 <body>
   <div class='container'>
     <nav>
-<<<<<<< HEAD
       <div class="nav-wrapper">
         <a href="/home" style='margin-left:1em' class="brand-logo">KonsultacjeAPP</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -35,20 +34,7 @@
           {% endif %}
         </ul>
       </div>
-=======
-        <div class="nav-wrapper">
-            <a href="/home" style='margin-left:1em' class="brand-logo">KonsultacjeAPP</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                {% if admin == 0 %}
-                <li><a href="/consultations/date" class='nav-ele'>Umów konsultacje</a></li>
-                {% endif %}
-                {% if admin == 1 %}
-                <li><a href="#" class='nav-ele'>Zarządzaj konsultacjami</a></li>
-                <li><a href="/logout" class='nav-ele'>Wyloguj się</a></li>
-                {% endif %}
-            </ul>
-        </div>
->>>>>>> c93901be20a658014119bc239c785826346c6f88
+
     </nav>
     <div id='content'>
       {% block content %}{% endblock %}
