@@ -2,33 +2,6 @@
 
 {% block form %}
 
-<<<<<<< HEAD
-<form action="{{ path_for('consultationsPage') }}" method="post" class='consultations-form' style="margin-top: 2em">
-  {% for h in hoursList %}
-  {% set i = ( i | default(0) ) + 1 %}
-  <div class='row' style="margin-top: 0; margin-bottom: 0">
-    <div class='col s2 offset-s4'>
-      <p>{{ h['hours'] }}</p>
-    </div>
-    <div class='col s2'>
-      <p>
-        <label>
-          <input type="checkbox" name="hour{{ i }}" class="filled-in" {% if h['disable'] == true %} disabled="disabled {% endif %}" />
-          <span></span>
-        </label>
-      </p>
-    </div>
-  </div>
-  {% endfor %}
-  <div class='row' style="margin-top: 4em">
-    <div class='col s2 offset-s5'>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Dalej
-        <i class="material-icons right">send</i>
-      </button>
-    </div>
-  </div>
-</form>
-=======
     <form action="{{ path_for('consultationsTimePage') }}" method="post" class='consultations-form consultations-date-picker'>
         <div class='row'>
             <div class='col s2 offset-s4' style="margin-bottom: 6em">
@@ -55,7 +28,6 @@
             </div>
         </div>
     </form>
->>>>>>> c93901be20a658014119bc239c785826346c6f88
 
     <script>
         var startHourSelect;
