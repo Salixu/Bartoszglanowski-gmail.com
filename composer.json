@@ -8,5 +8,6 @@
         "slim/slim": "^3.0",
         "slim/twig-view": "^2.0",
         "illuminate/database": "^5.2",
+        "phpmailer/phpmailer": "^6.1"
     }
 }

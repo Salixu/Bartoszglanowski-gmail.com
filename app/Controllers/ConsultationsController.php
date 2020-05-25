@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\StudentConsultations;
 use Slim\Views\Twig;
 use Psr\Log\LoggerInterface;
 use Slim\Http\Request;
@@ -25,11 +26,25 @@ final class ConsultationsController extends Controller
     {
         //TODO Pobranie listy dostepny dni
         $data = [
-            'dateList' => ['2020/05/20', '2020/05/05']
+            'daysOffList' => $this->getDaysOffList(),
+            'consultationsDaysList' => $this->getConsultationsDaysList()
         ];
 
         $this->view->render($response, 'consultations-date-picker.twig', $data);
+
         return $response;
+    }
+
+    //Funkcja zwracajaca liste z datami dni wolnych
+    public function getDaysOffList(){
+        //TODO
+        return ['2020/05/20', '2020/05/05'];
+    }
+
+    //Funkcja zwracajaca numery dni w ktore odbywaja sie konsultacje np 2(wtorek) i 4(czwartek)
+    public function getConsultationsDaysList(){
+        //TODO
+        return [2, 4];
     }
 
     public function postDatePickerConsultations($request, $response){
@@ -75,10 +90,12 @@ final class ConsultationsController extends Controller
             'subject' => $subject
         ];
 
-        var_dump($_SESSION['date']);
-        var_dump($_SESSION['hours']);
-        var_dump($_SESSION['data']);
-        die();
+        $this->insertData();
+
+        return $this->view->render($response, 'home.twig');
+    }
+
+    public function emailSend(){
 
     }
 
@@ -133,6 +150,20 @@ final class ConsultationsController extends Controller
         }
 
         return $freeHours;
+    }
+
+    public function insertData(){
+        $studentConsultations = StudentConsultations::create([
+            'student_name' => $_SESSION['data']['name'],
+            'student_surname' => $_SESSION['data']['surname'],
+            'student_mail' => $_SESSION['data']['email'],
+            'subject' => $_SESSION['data']['subject'],
+            'status' => 'unconfirmed',
+            'consultation_date' => $_SESSION['date'],
+            'consultation_start' => $_SESSION['hours']['startHour'],
+            'consultation_end' => $_SESSION['hours']['endHour']
+        ]);
+
     }
 
     public function timePickerConsultations($request, $response)

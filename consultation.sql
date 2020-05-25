@@ -22,7 +22,6 @@ CREATE TABLE IF NOT EXISTS `consuldb`.`adminsConstultations` (
       `student_name` VARCHAR(256),
       `student_surname` VARCHAR(256),
       `student_mail` VARCHAR(256),
-      `student_message` VARCHAR(1024),
       `subject` VARCHAR(256),
       `status` VARCHAR(256),
       `consultation_date` VARCHAR(256),

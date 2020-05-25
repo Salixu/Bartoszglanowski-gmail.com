@@ -4,21 +4,32 @@
 
     <script>
         $(document).ready(function(){
+
+            var consultationsDays = getConsultationsDays()
+            var daysOff = getDaysOff();
+
+            console.log(consultationsDays);
+            console.log(daysOff);
+
             $('.datepicker').datepicker(
                 {
                     disableDayFn: function(date){
 
-                        let listDate = [
-                            {% for date in dateList %}
-                            new Date('{{ date }}').toDateString(),
-                            {% endfor %}
-                        ];
-
-                        if(listDate.includes(date.toDateString())){
-                            return false;
-                        }else{
-                            return true;
+                        for(var i = 0; i < consultationsDays.length; i++){
+                            if(date.getDay() == consultationsDays[i]){
+                                for(var j = 0; j < daysOff.length; j++){
+                                    console.log("Podejscie: " + j + " " + date.toString() + "==" + new Date(daysOff[j]).toString());
+                                    if(date.toString() == new Date(daysOff[j]).toString()){
+                                        console.log("Return true");
+                                        return true;
+                                    }
+                                }
+                                console.log("Return false");
+                                return false;
+                            }
                         }
+
+                        return true;
                     },
 
                     format: 'yyyy/mm/dd'
@@ -26,6 +37,23 @@
             );
 
         });
+
+        var getDaysOff = () => {
+            var daysOffList = [];
+            {% for day in daysOffList %}
+                daysOffList.push('{{ day }}');
+            {% endfor %}
+            return daysOffList;
+        }
+
+        var getConsultationsDays = () => {
+            var consultationsDays = [];
+            {% for day in consultationsDaysList %}
+                consultationsDays.push('{{ day }}')
+            {% endfor %}
+            return consultationsDays;
+        }
+
     </script>
 
     <form action="{{ path_for('consultationsDatePage') }}" method="post" class='consultations-form consultations-date-picker'>
