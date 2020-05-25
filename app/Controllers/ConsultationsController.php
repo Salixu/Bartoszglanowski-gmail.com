@@ -12,6 +12,8 @@ final class ConsultationsController extends Controller
 
     protected $data;
 
+    protected $userData;
+
     public function __construct($container)
     {
         parent::__construct($container);
@@ -32,39 +34,55 @@ final class ConsultationsController extends Controller
 
     public function postDatePickerConsultations($request, $response){
         $date = $request->getParams()['date'];
+
+        $_SESSION['date'] = $date;
+
 //      //TODO Pobranie godzin dla danego dnia;
 
-        $data['hoursList'] = [
-                [
-                    'hours' => '10:00 - 10:10',
-                    'disable' => false
-                ],
-                [
-                    'hours' =>  '10:10 - 10:20',
-                    'disable' => false
-                ],
-                [
-                    'hours' => '10:20 - 10:30',
-                    'disable' => false
-                ],
-                [
-                    'hours' => '10:30 - 10:40',
-                    'disable' => true
-                ],
-                [
-                    'hours' => '10:40 - 10:50',
-                    'disable' => false
-                ],
-                [
-                    'hours' => '10:50 - 11:00',
-                    'disable' => false
-                ]
-            ];
+        $data['hoursList'] = $this->getFreeHours();
 
         $this->view->render($response, 'consultations-time-picker.twig', $data);
     }
 
-    public function hoursEliminator(){
+    public function postTimePickerConsultations($request, $response){
+        $startHour = $request->getParams()['startHour'];
+        $endHour = $request->getParams()['endHour'];
+
+        $_SESSION['hours'] = [
+            'startHour' => $startHour,
+            'endHour' => $endHour
+        ];
+
+        //TODO Pobranie przedmiotow ewentualnie ustalenie na sztywno co jest zrobione
+
+        $data = [
+            'subjectsList' => ['SB', 'PSK', 'SW', 'IAMI']
+        ];
+
+        $this->view->render($response, 'consultations-data.twig', $data);
+    }
+
+    public function postDataConsultations($request, $response){
+        $name = $request->getParams()['first_name'];
+        $surname = $request->getParams()['last_name'];
+        $email = $request->getParams()['email'];
+        $subject = $request->getParams()['subject'];
+
+        $_SESSION['data'] = [
+            'name' => $name,
+            'surname' => $surname,
+            'email' => $email,
+            'subject' => $subject
+        ];
+
+        var_dump($_SESSION['date']);
+        var_dump($_SESSION['hours']);
+        var_dump($_SESSION['data']);
+        die();
+
+    }
+
+    public function getFreeHours(){
         $startHour = '10:00';
         $endHour = '11:00';
 
@@ -114,9 +132,7 @@ final class ConsultationsController extends Controller
             ]);
         }
 
-        var_dump($freeHours);
-        die();
-
+        return $freeHours;
     }
 
     public function timePickerConsultations($request, $response)
