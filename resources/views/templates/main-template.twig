@@ -1,46 +1,48 @@
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
 
-    <title>Konsultacje</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+  <title>Konsultacje</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
 
-    <link rel="stylesheet" href="../css/style.css">
-{#    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>#}
-{#    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>#}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  {#    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>#}
+  {#    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>#}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
 </head>
 
 <body>
-<div class='container'>
+  <div class='container'>
     <nav>
-        <div class="nav-wrapper">
-            <a href="/home" style='margin-left:1em' class="brand-logo">KonsultacjeAPP</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                {% if admin == 0 %}
-                <li><a href="/consultations" class='nav-ele'>Umów konsultacje</a></li>
-                {% endif %}
-                {% if admin == 1 %}
-                <li><a href="#" class='nav-ele'>Zarządzaj konsultacjami</a></li>
-                <li><a href="/logout" class='nav-ele'>Wyloguj się</a></li>
-                {% endif %}
-            </ul>
-        </div>
+      <div class="nav-wrapper">
+        <a href="/home" style='margin-left:1em' class="brand-logo">KonsultacjeAPP</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          {% if admin == 0 %}
+          <li><a href="/consultations" class='nav-ele'>Umów konsultacje</a></li>
+          {% endif %}
+          {% if admin == 1 %}
+          <li><a href="/adminConsultations" class='nav-ele'>Zarządzaj konsultacjami</a></li>
+          <li><a href="/logout" class='nav-ele'>Wyloguj się</a></li>
+          {% endif %}
+        </ul>
+      </div>
     </nav>
     <div id='content'>
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </div>
     <div id='footer'>
-        <p>Autorzy: Kasprzak Dominik, Bartosz Glanowski</p>
-        <p>Github projektu: <a class='footer-link' href='https://github.com/Salixu/Slim-app-project'>tutaj</a></p>
+      <p>Autorzy: Kasprzak Dominik, Bartosz Glanowski</p>
+      <p>Github projektu: <a class='footer-link' href='https://github.com/Salixu/Slim-app-project'>tutaj</a></p>
     </div>
-</div>
+  </div>
 </body>
+
 </html>

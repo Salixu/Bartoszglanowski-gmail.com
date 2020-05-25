@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `consuldb`.`adminsConstultations` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `consultation_start` VARCHAR(256),
   `consultation_end` VARCHAR(256),
+  `day_of_the_week` VARCHAR(256),
   PRIMARY KEY (`id`));
 
   CREATE TABLE IF NOT EXISTS `consuldb`.`daysOff` (

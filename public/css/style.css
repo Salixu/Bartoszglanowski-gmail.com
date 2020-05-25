@@ -37,7 +37,7 @@ body {
     padding-right: 1em;
 }
 
-.consultations-container, .login-container {
+.consultations-container, .login-container, .admin-container {
     background-color: #CFFF87;
     margin-top: 2em;
     text-align: center;
@@ -47,6 +47,10 @@ body {
     font-size: 3em;
 }
 
+.admin-incoming-header{
+  font-size: 1.7em;
+}
+
 .consultations-form, .login-form {
     padding-bottom: 2em;
     padding-top: 2em;
@@ -54,6 +58,10 @@ body {
 
 .consultations-date-picker{
     padding-top: 6em;
+}
+
+.admin-container{
+  padding-bottom: 2em;
 }
 
 .datepicker {
@@ -107,6 +115,10 @@ body {
 .disabled > span:hover, .selected:hover {
     background-color: transparent;
     cursor: default;
+}
+
+.customButton{
+  margin-top: 1.5em;
 }
 
 label {

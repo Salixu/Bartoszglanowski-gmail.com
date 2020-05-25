@@ -12,6 +12,8 @@ class AdminsConsultations extends Model
 
     protected $fillable = [
         'consultation_start',
-        'consultation_end'
+        'consultation_end',
+        'day_of_the_week'
     ];
+
 }

@@ -12,7 +12,7 @@ $app = new \Slim\App([
         'db' => [
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'test',
+            'database' => 'consuldb',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
@@ -62,6 +62,10 @@ $container['ConsultationsController'] = function($container){
 
 $container['LoginController'] = function($container){
     return new \App\Controllers\LoginController($container);
+};
+
+$container['AdminController'] = function($container){
+    return new \App\Controllers\AdminController($container);
 };
 
 $container['auth'] = function($container){
