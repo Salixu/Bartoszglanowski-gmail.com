@@ -5,69 +5,71 @@
   <div class='col s8 offset-s2'>
     <h1 class='login-header'>Zarządzaj konsultacjami</h1>
   </div>
-  <form action="{{ path_for('adminPage') }}" method="post">
-    <div class='row'>
-      <div class='col s8 m8 l3'>
-        <div class="input-field col s12 offset-s2">
-          <select id="start" name="start">
-            <option value="08:00">08:00</option>
-            <option value="09:00">09:00</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-            <option value="13:00">13:00</option>
-            <option value="14:00">14:00</option>
-            <option value="15:00">15:00</option>
-            <option value="16:00">16:00</option>
-            <option value="17:00">17:00</option>
-            <option value="18:00">18:00</option>
-            <option value="19:00">19:00</option>
-            <option value="20:00">20:00</option>
-          </select>
-          <label>Godzina rozpoczęcia</label>
+  <div class="">
+    <form action="{{ path_for('adminPage') }}" method="post">
+      <div class='row'>
+        <div class='col s8 m8 l3'>
+          <div class="input-field col s12 offset-s2">
+            <select id="start" name="start">
+              <option value="08:00">08:00</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
+              <option value="19:00">19:00</option>
+              <option value="20:00">20:00</option>
+            </select>
+            <label>Godzina rozpoczęcia</label>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class='col s8 m8 l3'>
-        <div class="input-field col s12 offset-s2">
-          <select id="end" name="end">
-            <option value="08:00">08:00</option>
-            <option value="09:00">09:00</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-            <option value="13:00">13:00</option>
-            <option value="14:00">14:00</option>
-            <option value="15:00">15:00</option>
-            <option value="16:00">16:00</option>
-            <option value="17:00">17:00</option>
-            <option value="18:00">18:00</option>
-            <option value="19:00">19:00</option>
-            <option value="20:00">20:00</option>
-          </select>
-          <label>Godzina zakończenia</label>
+      <div class="row">
+        <div class='col s8 m8 l3'>
+          <div class="input-field col s12 offset-s2">
+            <select id="end" name="end">
+              <option value="08:00">08:00</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
+              <option value="19:00">19:00</option>
+              <option value="20:00">20:00</option>
+            </select>
+            <label>Godzina zakończenia</label>
+          </div>
+        </div>
+        <div class='col l2 s8 offset-s2'>
+          <button class="btn waves-effect waves-light customButton" type="submit">Dodaj
         </div>
       </div>
-      <div class='col l2 s8 offset-s2'>
-        <button class="btn waves-effect waves-light customButton" type="submit">Dodaj
-      </div>
-    </div>
-    <div class="row">
-      <div class='col s8 m8 l3'>
-        <div class="input-field col s12 offset-s2">
-          <select id="day" name="day">
-            <option value="1">poniedziałek</option>
-            <option value="2">wtorek</option>
-            <option value="3">środa</option>
-            <option value="4">czwartek</option>
-            <option value="5">piątek</option>
-          </select>
-          <label>Godzina zakończenia</label>
+      <div class="row">
+        <div class='col s8 m8 l3'>
+          <div class="input-field col s12 offset-s2">
+            <select id="day" name="day">
+              <option value="1">poniedziałek</option>
+              <option value="2">wtorek</option>
+              <option value="3">środa</option>
+              <option value="4">czwartek</option>
+              <option value="5">piątek</option>
+            </select>
+            <label>Godzina zakończenia</label>
+          </div>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
 
 

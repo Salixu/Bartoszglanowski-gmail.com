@@ -14,12 +14,12 @@ CREATE TABLE IF NOT EXISTS `consuldb`.`adminsConstultations` (
   PRIMARY KEY (`id`));
 
   CREATE TABLE IF NOT EXISTS `consuldb`.`daysOff` (
-    `id` INT NOT NULL,
+    `id` INT NOT NULL AUTO_INCREMENT,
     `consultation_date` VARCHAR(256),
     PRIMARY KEY (`id`));
 
     CREATE TABLE IF NOT EXISTS `consuldb`.`studentsConsultations` (
-      `id` INT NOT NULL,
+      `id` INT NOT NULL AUTO_INCREMENT,
       `student_name` VARCHAR(256),
       `student_surname` VARCHAR(256),
       `student_mail` VARCHAR(256),
