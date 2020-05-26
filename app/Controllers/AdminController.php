@@ -12,7 +12,9 @@ final class AdminController extends Controller
   public function getAdminPanel($request, $response)
   {
     $data = [
-        'admin' => $_SESSION['admin']
+        'admin' => $_SESSION['admin'],
+        'consultations' => AdminsConsultations::all(),
+        'studentConsultations' => studentConsultations::all()
     ];
       $this->view->render($response, 'adminPanel.twig', $data);
       return $response;
@@ -28,6 +30,7 @@ final class AdminController extends Controller
       $consultation->consultation_start = $params['start'];
       $consultation->consultation_end = $params['end'];
       $consultation->day_of_the_week = $params['day'];
+      $consultation->day_name = AdminController::findName($params['day']);
       $consultation->save();
     }else {
       AdminsConsultations::where('day_of_the_week', $params['day'])
@@ -37,5 +40,37 @@ final class AdminController extends Controller
 
 
     return $response->withRedirect($this->router->pathFor('adminPage'));
+  }
+
+  public function deleteVisit($request, $response){
+    $param = $request->getParams();
+    $data = [
+        'admin' => $_SESSION['admin'],
+        'consultations' => AdminsConsultations::all()
+    ];
+
+    AdminsConsultations::where('day_name', $param['day_name'])->delete();
+
+    $this->view->render($response, 'adminPanel.twig', $data);
+    return $response;
+  }
+
+  private function findName($consultation){
+    switch ($consultation) {
+      case '1':
+        return "Poniedziałek";
+
+      case '2':
+        return "Wtorek";
+
+      case '3':
+        return "Środa";
+
+      case '4':
+        return "Czwartek";
+
+      case '5':
+        return "Piątek";
+    }
   }
 }

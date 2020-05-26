@@ -63,6 +63,7 @@ body {
 
 .admin-container{
   padding-bottom: 2em;
+  height: auto;
 }
 
 .datepicker {

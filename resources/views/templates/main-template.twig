@@ -22,18 +22,18 @@
 <body>
   <div class='container'>
     <nav>
-        <div class="nav-wrapper">
-            <a href="/home" style='margin-left:1em' class="brand-logo">KonsultacjeAPP</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                {% if admin == 0 %}
-                <li><a href="/consultations/date" class='nav-ele'>Umów konsultacje</a></li>
-                {% endif %}
-                {% if admin == 1 %}
-                <li><a href="/adminConsultations" class='nav-ele'>Zarządzaj konsultacjami</a></li>
-                <li><a href="/logout" class='nav-ele'>Wyloguj się</a></li>
-                {% endif %}
-            </ul>
-        </div>
+      <div class="nav-wrapper">
+        <a href="/home" style='margin-left:1em' class="brand-logo">KonsultacjeAPP</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          {% if admin == 0 %}
+          <li><a href="/consultations/date" class='nav-ele'>Umów konsultacje</a></li>
+          {% endif %}
+          {% if admin == 1 %}
+          <li><a href="/adminConsultations/review" class='nav-ele'>Zarządzaj konsultacjami</a></li>
+          <li><a href="/logout" class='nav-ele'>Wyloguj się</a></li>
+          {% endif %}
+        </ul>
+      </div>
     </nav>
     <div id='content'>
       {% block content %}{% endblock %}

@@ -14,5 +14,8 @@ $app->get('/login', 'LoginController:getLogin')->setName('loginPage');
 $app->post('/login', 'LoginController:login');
 $app->get('/logout', "LoginController:logout");
 
-$app->get('/adminConsultations', 'AdminController:getAdminPanel')->setName('adminPage');
-$app->post('/adminConsultations', 'AdminController:setVisit');
+$app->group('/adminConsultations', function () use ($app){
+  $app->get('/review', 'AdminController:getAdminPanel')->setName('adminPage');
+  $app->post('/add', 'AdminController:setVisit')->setName('setVisit');
+  $app->post('/delete', 'AdminController:deleteVisit')->setName('deleteVisit');
+});
