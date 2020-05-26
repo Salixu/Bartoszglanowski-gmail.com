@@ -72,6 +72,8 @@ $container['auth'] = function($container){
     return new \App\Auth\Auth;
 };
 
+$container['view']['basePath'] = rtrim(str_ireplace("index.php", "", $container["request"]->getUri()->getBasePath()), "/");
+
 // Register middleware
 require __DIR__ . '/../app/middleware.php';
 

@@ -5,6 +5,7 @@ use Slim\Views\Twig;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use App\Models\AdminsConsultations;
+use App\Models\StudentConsultations;
 
 final class AdminController extends Controller
 {
@@ -14,7 +15,7 @@ final class AdminController extends Controller
     $data = [
         'admin' => $_SESSION['admin'],
         'consultations' => AdminsConsultations::all(),
-        'studentConsultations' => studentConsultations::all()
+        'studentConsultations' => StudentConsultations::all()
     ];
       $this->view->render($response, 'adminPanel.twig', $data);
       return $response;

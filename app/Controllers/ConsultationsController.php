@@ -102,11 +102,23 @@ final class ConsultationsController extends Controller
 
         $this->insertData();
 
+        $this->sendEmail();
+
         return $this->view->render($response, 'home.twig');
     }
 
-    public function emailSend(){
-
+    public function sendEmail(){
+        $to_email = "xandi0.pl@gmail.com";
+        $subject = "Nowa konsultacja";
+        $body = "Student: " . $_SESSION['data']['name'] . " " . $_SESSION['data']['surname'] . "
+Email: " . $_SESSION['data']['email'] . "
+Przedmiot: " . $_SESSION['data']['subject'] . "
+Data: " . $_SESSION['date'] . "
+Godzina: " . $_SESSION['hours']['startHour'] . "-" . $_SESSION['hours']['endHour'] . "
+        
+Wejdz na stronę, aby potwierdzić lub odrzucić konsultacje.";
+        $headers = "From: slim.bot2137@gmail.com";
+        mail($to_email, $subject, $body, $headers);
     }
 
     public function getFreeHours(){
