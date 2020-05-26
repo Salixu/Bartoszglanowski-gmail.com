@@ -1,0 +1,21 @@
+{% extends "templates/main-template.twig" %}
+
+{% block content %}
+    <div class='home-content'>
+        <h1 class='home-header'>Udalo sie!</h1>
+        <p class='home-paragraph' style="text-align: center;">
+            Twoja propozycja konsultacji została wysłana. Za chwilę zostaniesz przekierowany na stronę główną.
+        </p>
+    </div>
+
+    <script>
+
+        function redirect(page) {
+            setTimeout(function () {
+                window.location.href = page;
+            }, 4000);
+        }
+
+        redirect("{{ basePath }}/home");
+    </script>
+{% endblock %}

@@ -8,6 +8,7 @@ $app->group('/consultations', function () use ($app){
     $app->post('/date','ConsultationsController:postDatePickerConsultations');
     $app->post('/time', 'ConsultationsController:postTimePickerConsultations')->setName('consultationsTimePage');
     $app->post('/data', 'ConsultationsController:postDataConsultations')->setName('consultationsDataPage');
+    $app->get('/send', 'ConsultationsController:postSendConsultations')->setName('consultationsSendedPage');
 });
 
 $app->get('/login', 'LoginController:getLogin')->setName('loginPage');
