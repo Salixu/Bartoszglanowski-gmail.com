@@ -5,6 +5,8 @@ use Slim\Views\Twig;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use App\Models\AdminsConsultations;
+use App\Models\StudentConsultations;
+use Illuminate\Pagination\Paginator;
 
 final class AdminController extends Controller
 {
@@ -14,7 +16,7 @@ final class AdminController extends Controller
     $data = [
         'admin' => $_SESSION['admin'],
         'consultations' => AdminsConsultations::all(),
-        'studentConsultations' => studentConsultations::all()
+        'studentConsultations' => StudentConsultations::all()
     ];
       $this->view->render($response, 'adminPanel.twig', $data);
       return $response;
@@ -38,7 +40,21 @@ final class AdminController extends Controller
           'consultation_end'=>$params['end']]);
     }
 
+    return $response->withRedirect($this->router->pathFor('adminPage'));
+  }
 
+  public function confirmVisit($request, $response){
+    $params = $request->getParams();
+
+    if ( $params['dec'] == null){
+      StudentConsultations::find($params['conf'])->update([
+         'status' => 'confirmed'
+       ]);
+    }else{
+      StudentConsultations::find($params['dec'])->update([
+         'status' => 'unconfirmed'
+       ]);
+    }
     return $response->withRedirect($this->router->pathFor('adminPage'));
   }
 
@@ -51,8 +67,8 @@ final class AdminController extends Controller
 
     AdminsConsultations::where('day_name', $param['day_name'])->delete();
 
-    $this->view->render($response, 'adminPanel.twig', $data);
-    return $response;
+
+    return  $response->withRedirect($this->router->pathFor('adminPage'));
   }
 
   private function findName($consultation){

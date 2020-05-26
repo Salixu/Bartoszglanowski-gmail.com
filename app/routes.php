@@ -18,4 +18,5 @@ $app->group('/adminConsultations', function () use ($app){
   $app->get('/review', 'AdminController:getAdminPanel')->setName('adminPage');
   $app->post('/add', 'AdminController:setVisit')->setName('setVisit');
   $app->post('/delete', 'AdminController:deleteVisit')->setName('deleteVisit');
+  $app->post('/confirm', 'AdminController:confirmVisit')->setName('confirmVisit');
 });

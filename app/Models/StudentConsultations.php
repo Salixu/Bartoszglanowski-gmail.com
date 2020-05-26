@@ -8,10 +8,8 @@ class StudentConsultations extends Model
 {
     protected $table = 'studentsConsultations';
 
-    //turning off created_at and updated_at in users table
     public $timestamps = false;
 
-    //declare table rows
     protected $fillable = [
       'student_name',
       'student_surname',
