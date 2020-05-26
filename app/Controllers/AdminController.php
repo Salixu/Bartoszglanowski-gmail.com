@@ -6,7 +6,6 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use App\Models\AdminsConsultations;
 use App\Models\StudentConsultations;
-use Illuminate\Pagination\Paginator;
 
 final class AdminController extends Controller
 {

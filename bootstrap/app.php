@@ -72,6 +72,11 @@ $container['auth'] = function($container){
     return new \App\Auth\Auth;
 };
 
+$container['view']['basePath'] = rtrim(str_ireplace("index.php", "", $container["request"]->getUri()->getBasePath()), "/");
+
+// Added admin email
+require __DIR__ . '/../app/email.php';
+
 // Register middleware
 require __DIR__ . '/../app/middleware.php';
 

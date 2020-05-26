@@ -102,11 +102,23 @@ final class ConsultationsController extends Controller
 
         $this->insertData();
 
-        return $this->view->render($response, 'home.twig');
+        $this->sendEmail();
+
+        return  $response->withRedirect($this->router->pathFor('consultationsSendedPage'));
     }
 
-    public function emailSend(){
-
+    public function sendEmail(){
+        $to_email = $this->email;
+        $subject = "Nowa konsultacja";
+        $body = "Student: " . $_SESSION['data']['name'] . " " . $_SESSION['data']['surname'] . "
+Email: " . $_SESSION['data']['email'] . "
+Przedmiot: " . $_SESSION['data']['subject'] . "
+Data: " . $_SESSION['date'] . "
+Godzina: " . $_SESSION['hours']['startHour'] . "-" . $_SESSION['hours']['endHour'] . "
+        
+Wejdz na stronę, aby potwierdzić lub odrzucić konsultacje.";
+        $headers = "From: slim.bot2137@gmail.com";
+        (mail($to_email, $subject, $body, $headers));
     }
 
     public function getFreeHours(){
@@ -217,5 +229,9 @@ final class ConsultationsController extends Controller
     {
         $this->view->render($response, 'consultations-time-picker.twig', $this->date);
         return $response;
+    }
+
+    public function postSendConsultations($request, $response){
+        return $this->view->render($response, 'consultations-send.twig');
     }
 }
