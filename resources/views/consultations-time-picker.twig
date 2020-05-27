@@ -2,25 +2,25 @@
 
 {% block form %}
 
-    <form action="{{ path_for('consultationsTimePage') }}" method="post" class='consultations-form consultations-date-picker'>
+    <form action="{{ path_for('consultationsTimePage') }}" method="post" class='consultations-form'>
         <div class='row'>
-            <div class='col s2 offset-s4' style="margin-bottom: 6em">
+            <div class='col s4 offset-s4'>
                 <select required name="startHour" class="startHourSelect" onchange="onFirstHourChange()">
                     <option value="" disabled selected>Godzina rozpoczecia</option>
                     {% for h in hoursList %}
                     <option value="{{ h['startHour'] }}">{{ h['startHour'] }}</option>
                     {% endfor %}
                 </select>
-                <label>Materialize Select</label>
             </div>
-            <div class='col s2' style="margin-bottom: 6em">
+        </div>
+        <div class="row">
+            <div class='col s4 offset-s4' style="margin-bottom: 5em;">
                 <select required name="endHour" class="endHourSelect">
                     <option class="pierwszy" value="" disabled selected>Godzina zakończenia</option>
                 </select>
-                <label>Materialize Select</label>
             </div>
         </div>
-        <div class='row'>
+        <div class='row centerButton'>
             <div class='col s2 offset-s5'>
                 <button class="btn waves-effect waves-light" type="submit" name="action">Dalej
                     <i class="material-icons right">send</i>
