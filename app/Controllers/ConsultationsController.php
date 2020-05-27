@@ -115,7 +115,7 @@ Email: " . $_SESSION['data']['email'] . "
 Przedmiot: " . $_SESSION['data']['subject'] . "
 Data: " . $_SESSION['date'] . "
 Godzina: " . $_SESSION['hours']['startHour'] . "-" . $_SESSION['hours']['endHour'] . "
-        
+
 Wejdz na stronę, aby potwierdzić lub odrzucić konsultacje.";
         $headers = "From: slim.bot2137@gmail.com";
         (mail($to_email, $subject, $body, $headers));
@@ -127,7 +127,7 @@ Wejdz na stronę, aby potwierdzić lub odrzucić konsultacje.";
         $startHour = $hours['startHour'];
         $endHour = $hours['endHour'];
 
-        $busyHoursList = $this->getBusyHoursList();
+        $busyHoursList = [];
 
         $countsOfHoursList = 0;
         $freeHours = [];
