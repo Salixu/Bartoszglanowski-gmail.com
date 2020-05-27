@@ -8,6 +8,14 @@ body {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
+#content{
+    min-height: calc(100vh - 89px - 75px);
+}
+
+nav{
+    margin-bottom: 25px
+}
+
 .nav-wrapper {
     background-color: #CFFF87;
 }
@@ -36,16 +44,48 @@ body {
     padding-left: 1em;
     padding-right: 1em;
 }
-
-.consultations-container, .login-container, .admin-container {
+ .admin-container {
     background-color: #CFFF87;
-    margin-top: 2em;
     text-align: center;
     height: 35em;
 }
 
-.consultations-header, .login-header {
+.login-container{
+    background-color: #CFFF87;
+    text-align: justify;
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+    width: 35em;
+}
+
+.consultations-container{
+    text-align: center;
+    background-color: #CFFF87;
+    text-align: justify;
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+    width: 60%;
+    height: 35em;
+}
+
+.consultations-header, .login-header, .admin-header {
+    text-align: center;
     font-size: 3em;
+}
+
+.admin-header {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.centerButton{
+    text-align: center;
 }
 
 .admin-incoming-header{
@@ -54,7 +94,7 @@ body {
 
 .consultations-form, .login-form {
     padding-bottom: 2em;
-    padding-top: 2em;
+
 }
 
 .consultations-date-picker{
@@ -123,6 +163,9 @@ body {
   margin-top: 1.5em;
 }
 
+.admin-form{
+    margin-bottom: 4em;
+}
 
 label {
     color: black !important;
@@ -152,9 +195,6 @@ input[type=email]:not(.browser-default) {
 }
 
 #footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
     background-color: #CFFF87;
     color: black;
@@ -163,6 +203,14 @@ input[type=email]:not(.browser-default) {
 
 a {
     color: #8AB34D;
+}
+
+th{
+    text-align: center;
+}
+
+td{
+    text-align: center;
 }
 
 .footer-link {
@@ -183,6 +231,10 @@ a {
 
 ::placeholder {
     color: black;
+}
+
+.modal-overlay{
+    background: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */
