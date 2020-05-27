@@ -7,7 +7,7 @@
   </div>
   <form class='admin-form' action="{{ path_for('setVisit') }}" method="post">
     <div class='row'>
-      <div class='col s2 offset-s3 input-field'>
+      <div class='col s2 offset-s2 input-field'>
           <select id="start" name="start">
             <option value="08:00">08:00</option>
             <option value="09:00">09:00</option>
@@ -53,10 +53,8 @@
         </select>
         <label>Wybierz dzień</label>
       </div>
-    </div>
-    <div class="row">
-      <div class='col s2 offset-s5'>
-        <button class="btn waves-effect waves-light" type="submit">Dodaj</button>
+      <div class='col s2'>
+        <button class="btn waves-effect waves-light customButton" type="submit">Dodaj</button>
       </div>
     </div>
   </form>
@@ -80,7 +78,7 @@
               <td>{{cons.day_name}}</td>
               <td>{{cons.consultation_start}}</td>
               <td>{{cons.consultation_end}}</td>
-              <td><button class="btn btn-small waves-effect waves-light customButton" id="day_name" name="day_name" value="{{cons.day_name}}" type="submit">Usuń</td>
+              <td><button class="btn btn-small waves-effect waves-light" id="day_name" name="day_name" value="{{cons.day_name}}" type="submit">Usuń</td>
             </tr>
             {% endfor %}
           </tbody>
@@ -98,9 +96,7 @@
   <h3 class='admin-incoming-header'>Nadchodzące konsultację</h3>
   <form action="{{ path_for('confirmVisit') }}" method="post">
     <div class="row">
-      <div class="col l1">
-      </div>
-      <div class="col l10 m8 s8">
+      <div class="col s8 offset-s2">
         <table>
           <thead>
             <tr>
@@ -108,10 +104,8 @@
               <th>Naziwsko</th>
               <th>Moduł</th>
               <th>Mail</th>
-              <th>Godzina rozpoczęcia</th>
-              <th>Godzina zakończenia</th>
+              <th>Godzina</th>
               <th>Data</th>
-              <th>Status</th>
             </tr>
           </thead>
 
@@ -122,16 +116,14 @@
               <td>{{cons.student_surname}}</td>
               <td>{{cons.subject}}</td>
               <td>{{cons.student_mail}}</td>
-              <td>{{cons.consultation_start}}</td>
-              <td>{{cons.consultation_end}}</td>
+              <td>{{cons.consultation_start}}-{{cons.consultation_end}}</td>
               <td>{{cons.consultation_date}}</td>
-              <td>{% if cons.status == "confirmed" %}
-                Potwierdzona
-                {% elseif cons.status == "unconfirmed" %}
-                Odrzucona
-                {% endif%}</td>
-              <td><button class="btn btn-small waves-effect waves-light customButton" id="conf" name="conf" value="{{cons.id}}" type="submit">Potwierdź</td>
-              <td><button class="btn btn-small waves-effect waves-light customButton" id="dec" name="dec" value="{{cons.id}}" type="submit">Odrzuć</td>
+              <td>
+                <div style="margin-left: 1em;">
+                  <button class="btn btn-small waves-effect waves-light adminConsButton" id="conf" name="conf" value="{{cons.id}}" type="submit">Potwierdź</button>
+                  <button class="btn btn-small waves-effect waves-light adminConsButton" id="dec" name="dec" value="{{cons.id}}" type="submit">Odrzuć</button>
+                </div>
+              </td>
             </tr>
             {% endfor %}
           </tbody>
@@ -146,5 +138,6 @@
   $(document).ready(function() {
     $('select').formSelect();
   });
+
 </script>
 {% endblock %}
