@@ -50,9 +50,7 @@ final class AdminController extends Controller
          'status' => 'confirmed'
        ]);
     }else{
-      StudentConsultations::find($params['dec'])->update([
-         'status' => 'unconfirmed'
-       ]);
+      StudentConsultations::find($params['dec'])->delete();
     }
     return $response->withRedirect($this->router->pathFor('adminPage'));
   }
