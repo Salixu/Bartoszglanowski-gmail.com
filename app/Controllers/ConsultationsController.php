@@ -127,7 +127,8 @@ Wejdz na stronę, aby potwierdzić lub odrzucić konsultacje.";
         $startHour = $hours['startHour'];
         $endHour = $hours['endHour'];
 
-        $busyHoursList = [];
+
+        $busyHoursList = $this->getBusyHoursList();
 
         $countsOfHoursList = 0;
         $freeHours = [];
