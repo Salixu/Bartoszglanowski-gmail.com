@@ -15,7 +15,8 @@ final class AdminController extends Controller
     $data = [
         'admin' => $_SESSION['admin'],
         'consultations' => AdminsConsultations::all(),
-        'studentConsultations' => StudentConsultations::all()
+        'studentConsultations' => StudentConsultations::where('status', '=', 'unconfirmed')->get(),
+        'studentConfirmed' => StudentConsultations::where('status', '=', 'confirmed')->get()
     ];
       $this->view->render($response, 'adminPanel.twig', $data);
       return $response;
